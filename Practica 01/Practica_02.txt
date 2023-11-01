@@ -1,0 +1,961 @@
+
+ ================ PRACTICA 01 - INTELIGENCIA ARTIFICIAL ================ 
+PRESENTADO POR : Heberth del Carpio Maraza
+PRACTICA 02    : Metodo Gradiente Descendente.
+
+====  DATOS === 
+Variable Independiente  X : 
+[ 0.482898 -0.104133 -0.777925 -0.764978 -0.107487 -1.262275  1.27123
+  2.685952 -0.248488 -0.092223 -0.375124  0.256421  0.683193  1.08723
+ -0.564292 -0.695358  1.037723 -0.207056 -0.467111 -1.636073 -1.055528
+ -1.197477  0.432481 -1.149708  0.565395  0.605142 -0.127327  0.557123
+  0.86431  -1.149016  0.139742  0.160344 -2.826022  0.265971 -1.068308
+ -0.193718  1.522458 -1.044217  1.205307  0.186382  0.081039 -0.019046
+ -0.257951  0.707091  0.103069  0.69331   1.993935 -1.013992  0.462783
+ -0.991075 -1.317226  1.318117  0.07163  -0.234542 -0.36148   0.147205
+ -0.450483  1.063438  1.561589  0.644346 -1.90722   1.462887  0.031982
+  1.204736  1.048772 -0.729116 -0.840588  0.360027 -1.081994  1.188253
+ -0.52106   1.442242 -0.212402 -1.757221 -1.074218  1.674416 -0.553586
+ -0.901053  1.100153  0.784     0.515408 -2.587066  0.149935  2.026445
+  0.689431  1.321103  1.32364   1.029298  0.485654  1.102689  2.440654
+ -0.557406  0.041157  0.248516  0.121254 -0.095203 -1.32221  -0.915241
+  0.391622  1.397106]
+Variable Dependiente Y : 
+[   6.336031   25.16063   -20.857651  -29.628791  -17.126133  -60.088465
+   96.915895   89.945463   -8.236853   -8.371876  -19.275775   34.628947
+   20.764382    8.53104   -22.981725  -55.120834   31.867615   -5.310888
+   -8.530723  -92.885702  -26.622465  -81.51744    28.303086  -53.840189
+   28.798912   43.337838  -37.89654    37.742307   39.574719  -46.55975
+   10.030178    7.273154  -96.09352   -27.623244  -25.455096  -49.855166
+   49.534923  -38.740986   70.91731   -32.678762    5.353979  -25.942748
+   11.399707   34.451505  -27.690117   34.817469   81.066476  -54.945168
+   48.885706  -28.432928  -54.594077   44.10961     4.737541  -11.396973
+  -25.345728    9.740124  -22.950096   19.331084   69.175267   26.342905
+  -55.986892   90.420195   28.685558   52.850447   63.516081  -29.06047
+  -11.325955   -9.238895  -55.46419    54.056871  -38.348698   46.105813
+  -25.315804  -82.040642  -44.754732  112.178725  -28.838667  -30.763488
+   35.205312   34.295003   42.738862 -102.455561   18.346685  113.719669
+   26.581818   12.780458   42.905235   16.659802   11.634679   38.947193
+   60.242109  -47.879276   37.456977  -12.287101    6.674369  -20.413629
+  -65.703984  -38.317688   26.525251   80.910924]
+
+ 
+ Iteracion :0
+ Intercepto anterior : 1
+ Pendiente anterior : 1
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 1.148097
+ Pendiente actual : 5.315288
+ Derivada de interccepto :-148.09675
+ Derivada de pendiente :-4315.288313
+ 
+ Iteracion :1
+ Intercepto anterior : 1.148097
+ Pendiente anterior : 5.315288
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 1.239858
+ Pendiente actual : 9.161606
+ Derivada de interccepto :-91.761015
+ Derivada de pendiente :-3846.317924
+ 
+ Iteracion :2
+ Intercepto anterior : 1.239858
+ Pendiente anterior : 9.161606
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 1.28543
+ Pendiente actual : 12.590307
+ Derivada de interccepto :-45.571759
+ Derivada de pendiente :-3428.700832
+ 
+ Iteracion :3
+ Intercepto anterior : 1.28543
+ Pendiente anterior : 12.590307
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 1.29345
+ Pendiente actual : 15.647083
+ Derivada de interccepto :-8.020163
+ Derivada de pendiente :-3056.77546
+ 
+ Iteracion :4
+ Intercepto anterior : 1.29345
+ Pendiente anterior : 15.647083
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 1.271252
+ Pendiente actual : 18.372591
+ Derivada de interccepto :22.197233
+ Derivada de pendiente :-2725.508162
+ 
+ Iteracion :5
+ Intercepto anterior : 1.271252
+ Pendiente anterior : 18.372591
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 1.225047
+ Pendiente actual : 20.803014
+ Derivada de interccepto :46.205101
+ Derivada de pendiente :-2430.423212
+ 
+ Iteracion :6
+ Intercepto anterior : 1.225047
+ Pendiente anterior : 20.803014
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 1.160075
+ Pendiente actual : 22.970555
+ Derivada de interccepto :64.972576
+ Derivada de pendiente :-2167.540633
+ 
+ Iteracion :7
+ Intercepto anterior : 1.160075
+ Pendiente anterior : 22.970555
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 1.080741
+ Pendiente actual : 24.903876
+ Derivada de interccepto :79.333583
+ Derivada de pendiente :-1933.320993
+ 
+ Iteracion :8
+ Intercepto anterior : 1.080741
+ Pendiente anterior : 24.903876
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 0.990737
+ Pendiente actual : 26.628492
+ Derivada de interccepto :90.004591
+ Derivada de pendiente :-1724.616365
+ 
+ Iteracion :9
+ Intercepto anterior : 0.990737
+ Pendiente anterior : 26.628492
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 0.893136
+ Pendiente actual : 28.167119
+ Derivada de interccepto :97.600131
+ Derivada de pendiente :-1538.626786
+ 
+ Iteracion :10
+ Intercepto anterior : 0.893136
+ Pendiente anterior : 28.167119
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 0.79049
+ Pendiente actual : 29.53998
+ Derivada de interccepto :102.646338
+ Derivada de pendiente :-1372.86157
+ 
+ Iteracion :11
+ Intercepto anterior : 0.79049
+ Pendiente anterior : 29.53998
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 0.684897
+ Pendiente actual : 30.765085
+ Derivada de interccepto :105.592765
+ Derivada de pendiente :-1225.104951
+ 
+ Iteracion :12
+ Intercepto anterior : 0.684897
+ Pendiente anterior : 30.765085
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 0.578075
+ Pendiente actual : 31.858471
+ Derivada de interccepto :106.822685
+ Derivada de pendiente :-1093.385559
+ 
+ Iteracion :13
+ Intercepto anterior : 0.578075
+ Pendiente anterior : 31.858471
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 0.471413
+ Pendiente actual : 32.83442
+ Derivada de interccepto :106.662076
+ Derivada de pendiente :-975.949303
+ 
+ Iteracion :14
+ Intercepto anterior : 0.471413
+ Pendiente anterior : 32.83442
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 0.366025
+ Pendiente actual : 33.705655
+ Derivada de interccepto :105.387438
+ Derivada de pendiente :-871.235279
+ 
+ Iteracion :15
+ Intercepto anterior : 0.366025
+ Pendiente anterior : 33.705655
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 0.262793
+ Pendiente actual : 34.48351
+ Derivada de interccepto :103.232599
+ Derivada de pendiente :-777.854359
+ 
+ Iteracion :16
+ Intercepto anterior : 0.262793
+ Pendiente anterior : 34.48351
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 0.162398
+ Pendiente actual : 35.17808
+ Derivada de interccepto :100.394639
+ Derivada de pendiente :-694.570174
+ 
+ Iteracion :17
+ Intercepto anterior : 0.162398
+ Pendiente anterior : 35.17808
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 0.065359
+ Pendiente actual : 35.798362
+ Derivada de interccepto :97.039031
+ Derivada de pendiente :-620.282207
+ 
+ Iteracion :18
+ Intercepto anterior : 0.065359
+ Pendiente anterior : 35.798362
+ Tasa de aprendizaje :0.1
+ Intercepto actual : -0.027945
+ Pendiente actual : 36.352373
+ Derivada de interccepto :93.304109
+ Derivada de pendiente :-554.010772
+ 
+ Iteracion :19
+ Intercepto anterior : -0.027945
+ Pendiente anterior : 36.352373
+ Tasa de aprendizaje :0.1
+ Intercepto actual : -0.11725
+ Pendiente actual : 36.847257
+ Derivada de interccepto :89.304949
+ Derivada de pendiente :-494.883655
+ 
+ Iteracion :20
+ Intercepto anterior : -0.11725
+ Pendiente anterior : 36.847257
+ Tasa de aprendizaje :0.1
+ Intercepto actual : -0.202387
+ Pendiente actual : 37.289381
+ Derivada de interccepto :85.136724
+ Derivada de pendiente :-442.124256
+ 
+ Iteracion :21
+ Intercepto anterior : -0.202387
+ Pendiente anterior : 37.289381
+ Tasa de aprendizaje :0.1
+ Intercepto actual : -0.283264
+ Pendiente actual : 37.684422
+ Derivada de interccepto :80.877618
+ Derivada de pendiente :-395.041028
+ 
+ Iteracion :22
+ Intercepto anterior : -0.283264
+ Pendiente anterior : 37.684422
+ Tasa de aprendizaje :0.1
+ Intercepto actual : -0.359856
+ Pendiente actual : 38.03744
+ Derivada de interccepto :76.59134
+ Deriv
+ Pendiente anterior : 60.179519
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 4.221571
+ Pendiente actual : 60.895126
+ Derivada de interccepto :40.785888
+ Derivada de pendiente :-715.606289
+ 
+ Iteracion :22
+ Intercepto anterior : 4.221571
+ Pendiente anterior : 60.895126
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 4.179914
+ Pendiente actual : 61.538804
+ Derivada de interccepto :41.657224
+ Derivada de pendiente :-643.67837
+ 
+ Iteracion :23
+ Intercepto anterior : 4.179914
+ Pendiente anterior : 61.538804
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 4.13797
+ Pendiente actual : 62.117819
+ Derivada de interccepto :41.943893
+ Derivada de pendiente :-579.014544
+ 
+ Iteracion :24
+ Intercepto anterior : 4.13797
+ Pendiente anterior : 62.117819
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 4.096216
+ Pendiente actual : 62.638696
+ Derivada de interccepto :41.754609
+ Derivada de pendiente :-520.877765
+ 
+ Iteracion :25
+ Intercepto anterior : 4.096216
+ Pendiente anterior : 62.638696
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 4.055033
+ Pendiente actual : 63.107302
+ Derivada de interccepto :41.182115
+ Derivada de pendiente :-468.606115
+ 
+ Iteracion :26
+ Intercepto anterior : 4.055033
+ Pendiente anterior : 63.107302
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 4.014728
+ Pendiente actual : 63.528908
+ Derivada de interccepto :40.305302
+ Derivada de pendiente :-421.605105
+ 
+ Iteracion :27
+ Intercepto anterior : 4.014728
+ Pendiente anterior : 63.528908
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.975537
+ Pendiente actual : 63.908248
+ Derivada de interccepto :39.191059
+ Derivada de pendiente :-379.340785
+ 
+ Iteracion :28
+ Intercepto anterior : 3.975537
+ Pendiente anterior : 63.908248
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.937641
+ Pendiente actual : 64.249582
+ Derivada de interccepto :37.895894
+ Derivada de pendiente :-341.333545
+ 
+ Iteracion :29
+ Intercepto anterior : 3.937641
+ Pendiente anterior : 64.249582
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.901174
+ Pendiente actual : 64.556734
+ Derivada de interccepto :36.467345
+ Derivada de pendiente :-307.152561
+ 
+ Iteracion :30
+ Intercepto anterior : 3.901174
+ Pendiente anterior : 64.556734
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.866229
+ Pendiente actual : 64.833145
+ Derivada de interccepto :34.945217
+ Derivada de pendiente :-276.410813
+ 
+ Iteracion :31
+ Intercepto anterior : 3.866229
+ Pendiente anterior : 64.833145
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.832866
+ Pendiente actual : 65.081906
+ Derivada de interccepto :33.362658
+ Derivada de pendiente :-248.760609
+ 
+ Iteracion :32
+ Intercepto anterior : 3.832866
+ Pendiente anterior : 65.081906
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.801119
+ Pendiente actual : 65.305795
+ Derivada de interccepto :31.747096
+ Derivada de pendiente :-223.889572
+ 
+ Iteracion :33
+ Intercepto anterior : 3.801119
+ Pendiente anterior : 65.305795
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.770998
+ Pendiente actual : 65.507312
+ Derivada de interccepto :30.121054
+ Derivada de pendiente :-201.517034
+ 
+ Iteracion :34
+ Intercepto anterior : 3.770998
+ Pendiente anterior : 65.507312
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.742495
+ Pendiente actual : 65.688703
+ Derivada de interccepto :28.502864
+ Derivada de pendiente :-181.390805
+ 
+ Iteracion :35
+ Intercepto anterior : 3.742495
+ Pendiente anterior : 65.688703
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.715588
+ Pendiente actual : 65.851988
+ Derivada de interccepto :26.907277
+ Derivada de pendiente :-163.28427
+ 
+ Iteracion :36
+ Intercepto anterior : 3.715588
+ Pendiente anterior : 65.851988
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.690242
+ Pendiente actual : 65.998981
+ Derivada de interccepto :25.346004
+ Derivada de pendiente :-146.993783
+ 
+ Iteracion :37
+ Intercepto anterior : 3.690242
+ Pendiente anterior : 65.998981
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.666413
+ Pendiente actual : 66.131318
+ Derivada de interccepto :23.828175
+ Derivada de pendiente :-132.336329
+ 
+ Iteracion :38
+ Intercepto anterior : 3.666413
+ Pendiente anterior : 66.131318
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.644053
+ Pendiente actual : 66.250465
+ Derivada de interccepto :22.360742
+ Derivada de pendiente :-119.147424
+ 
+ Iteracion :39
+ Intercepto anterior : 3.644053
+ Pendiente anterior : 66.250465
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.623104
+ Pendiente actual : 66.357744
+ Derivada de interccepto :20.948823
+ Derivada de pendiente :-107.279227
+ 
+ Iteracion :40
+ Intercepto anterior : 3.623104
+ Pendiente anterior : 66.357744
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.603508
+ Pendiente actual : 66.454343
+ Derivada de interccepto :19.596003
+ Derivada de pendiente :-96.598854
+ 
+ Iteracion :41
+ Intercepto anterior : 3.603508
+ Pendiente anterior : 66.454343
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.585203
+ Pendiente actual : 66.54133
+ Derivada de interccepto :18.304587
+ Derivada de pendiente :-86.986853
+ 
+ Iteracion :42
+ Intercepto anterior : 3.585203
+ Pendiente anterior : 66.54133
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.568128
+ Pendiente actual : 66.619666
+ Derivada de interccepto :17.075826
+ Derivada de pendiente :-78.335842
+ 
+ Iteracion :43
+ Intercepto anterior : 3.568128
+ Pendiente anterior : 66.619666
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.552217
+ Pendiente actual : 66.690215
+ Derivada de interccepto :15.9101
+ Derivada de pendiente :-70.549283
+ 
+ Iteracion :44
+ Intercepto anterior : 3.552217
+ Pendiente anterior : 66.690215
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.53741
+ Pendiente actual : 66.753756
+ Derivada de interccepto :14.807087
+ Derivada de pendiente :-63.540384
+ 
+ Iteracion :45
+ Intercepto anterior : 3.53741
+ Pendiente anterior : 66.753756
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.523644
+ Pendiente actual : 66.810987
+ Derivada de interccepto :13.765894
+ Derivada de pendiente :-57.231105
+ 
+ Iteracion :46
+ Intercepto anterior : 3.523644
+ Pendiente anterior : 66.810987
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.510859
+ Pendiente actual : 66.862538
+ Derivada de interccepto :12.785178
+ Derivada de pendiente :-51.551277
+ 
+ Iteracion :47
+ Intercepto anterior : 3.510859
+ Pendiente anterior : 66.862538
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.498996
+ Pendiente actual : 66.908976
+ Derivada de interccepto :11.863246
+ Derivada de pendiente :-46.437803
+ 
+ Iteracion :48
+ Intercepto anterior : 3.498996
+ Pendiente anterior : 66.908976
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.487998
+ Pendiente actual : 66.95081
+ Derivada de interccepto :10.998137
+ Derivada de pendiente :-41.83394
+ 
+ Iteracion :49
+ Intercepto anterior : 3.487998
+ Pendiente anterior : 66.95081
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.47781
+ Pendiente actual : 66.988498
+ Derivada de interccepto :10.187693
+ Derivada de pendiente :-37.688657
+ 
+ Iteracion :50
+ Intercepto anterior : 3.47781
+ Pendiente anterior : 66.988498
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.468381
+ Pendiente actual : 67.022454
+ Derivada de interccepto :9.42962
+ Derivada de pendiente :-33.956059
+ 
+ Iteracion :51
+ Intercepto anterior : 3.468381
+ Pendiente anterior : 67.022454
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.459659
+ Pendiente actual : 67.053049
+ Derivada de interccepto :8.721536
+ Derivada de pendiente :-30.594863
+ 
+ Iteracion :52
+ Intercepto anterior : 3.459659
+ Pendiente anterior : 67.053049
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.451598
+ Pendiente actual : 67.080617
+ Derivada de interccepto :8.06101
+ Derivada de pendiente :-27.56794
+ 
+ Iteracion :53
+ Intercepto anterior : 3.451598
+ Pendiente anterior : 67.080617
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.444152
+ Pendiente actual : 67.105459
+ Derivada de interccepto :7.445599
+ Derivada de pendiente :-24.841887
+ 
+ Iteracion :54
+ Intercepto anterior : 3.444152
+ Pendiente anterior : 67.105459
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.43728
+ Pendiente actual : 67.127846
+ Derivada de interccepto :6.872873
+ Derivada de pendiente :-22.386656
+ 
+ Iteracion :55
+ Intercepto anterior : 3.43728
+ Pendiente anterior : 67.127846
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.430939
+ Pendiente actual : 67.148021
+ Derivada de interccepto :6.340437
+ Derivada de pendiente :-20.175215
+ 
+ Iteracion :56
+ Intercepto anterior : 3.430939
+ Pendiente anterior : 67.148021
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.425093
+ Pendiente actual : 67.166204
+ Derivada de interccepto :5.845947
+ Derivada de pendiente :-18.183242
+ 
+ Iteracion :57
+ Intercepto anterior : 3.425093
+ Pendiente anterior : 67.166204
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.419706
+ Pendiente actual : 67.182593
+ Derivada de interccepto :5.387128
+ Derivada de pendiente :-16.388854
+ 
+ Iteracion :58
+ Intercepto anterior : 3.419706
+ Pendiente anterior : 67.182593
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.414744
+ Pendiente actual : 67.197365
+ Derivada de interccepto :4.961779
+ Derivada de pendiente :-14.772359
+ 
+ Iteracion :59
+ Intercepto anterior : 3.414744
+ Pendiente anterior : 67.197365
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.410176
+ Pendiente actual : 67.210681
+ Derivada de interccepto :4.567783
+ Derivada de pendiente :-13.316038
+ 
+ Iteracion :60
+ Intercepto anterior : 3.410176
+ Pendiente anterior : 67.210681
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.405973
+ Pendiente actual : 67.222685
+ Derivada de interccepto :4.203113
+ Derivada de pendiente :-12.003946
+ 
+ Iteracion :61
+ Intercepto anterior : 3.405973
+ Pendiente anterior : 67.222685
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.402108
+ Pendiente actual : 67.233507
+ Derivada de interccepto :3.865834
+ Derivada de pendiente :-10.821731
+ 
+ Iteracion :62
+ Intercepto anterior : 3.402108
+ Pendiente anterior : 67.233507
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.398553
+ Pendiente actual : 67.243264
+ Derivada de interccepto :3.554106
+ Derivada de pendiente :-9.756478
+ 
+ Iteracion :63
+ Intercepto anterior : 3.398553
+ Pendiente anterior : 67.243264
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.395287
+ Pendiente actual : 67.25206
+ Derivada de interccepto :3.266182
+ Derivada de pendiente :-8.79656
+ 
+ Iteracion :64
+ Intercepto anterior : 3.395287
+ Pendiente anterior : 67.25206
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.392287
+ Pendiente actual : 67.259992
+ Derivada de interccepto :3.00041
+ Derivada de pendiente :-7.931514
+ 
+ Iteracion :65
+ Intercepto anterior : 3.392287
+ Pendiente anterior : 67.259992
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.389532
+ Pendiente actual : 67.267144
+ Derivada de interccepto :2.755233
+ Derivada de pendiente :-7.151919
+ 
+ Iteracion :66
+ Intercepto anterior : 3.389532
+ Pendiente anterior : 67.267144
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.387002
+ Pendiente actual : 67.273593
+ Derivada de interccepto :2.52918
+ Derivada de pendiente :-6.449295
+ 
+ Iteracion :67
+ Intercepto anterior : 3.387002
+ Pendiente anterior : 67.273593
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.384682
+ Pendiente actual : 67.279409
+ Derivada de interccepto :2.320872
+ Derivada de pendiente :-5.816007
+ 
+ Iteracion :68
+ Intercepto anterior : 3.384682
+ Pendiente anterior : 67.279409
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 3.382553
+ Pendiente actual : 67.284654
+ Derivada de interccepto :2.129015
+ Derivada de pendiente :-5.245182
+ 
+ Iteracion :69
+ Intercepto anterior : 3.382553
+ Pendiente anterior : 67.284654
+ Tasa de aprendizaje :0.1 anterior : 2.435462
+ Pendiente anterior : 82.323616
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.419089
+ Pendiente actual : 82.34267
+ Derivada de interccepto :16.373155
+ Derivada de pendiente :-19.053383
+ 
+ Iteracion :70
+ Intercepto anterior : 2.419089
+ Pendiente anterior : 82.34267
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.403861
+ Pendiente actual : 82.36033
+ Derivada de interccepto :15.228592
+ Derivada de pendiente :-17.660336
+ 
+ Iteracion :71
+ Intercepto anterior : 2.403861
+ Pendiente anterior : 82.36033
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.389698
+ Pendiente actual : 82.3767
+ Derivada de interccepto :14.162459
+ Derivada de pendiente :-16.370498
+ 
+ Iteracion :72
+ Intercepto anterior : 2.389698
+ Pendiente anterior : 82.3767
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.376529
+ Pendiente actual : 82.391876
+ Derivada de interccepto :13.169582
+ Derivada de pendiente :-15.176056
+ 
+ Iteracion :73
+ Intercepto anterior : 2.376529
+ Pendiente anterior : 82.391876
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.364283
+ Pendiente actual : 82.405946
+ Derivada de interccepto :12.245103
+ Derivada de pendiente :-14.069811
+ 
+ Iteracion :74
+ Intercepto anterior : 2.364283
+ Pendiente anterior : 82.405946
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.352899
+ Pendiente actual : 82.418991
+ Derivada de interccepto :11.384461
+ Derivada de pendiente :-13.045123
+ 
+ Iteracion :75
+ Intercepto anterior : 2.352899
+ Pendiente anterior : 82.418991
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.342316
+ Pendiente actual : 82.431087
+ Derivada de interccepto :10.583384
+ Derivada de pendiente :-12.095867
+ 
+ Iteracion :76
+ Intercepto anterior : 2.342316
+ Pendiente anterior : 82.431087
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.332478
+ Pendiente actual : 82.442304
+ Derivada de interccepto :9.837865
+ Derivada de pendiente :-11.216393
+ 
+ Iteracion :77
+ Intercepto anterior : 2.332478
+ Pendiente anterior : 82.442304
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.323334
+ Pendiente actual : 82.452705
+ Derivada de interccepto :9.144154
+ Derivada de pendiente :-10.401485
+ 
+ Iteracion :78
+ Intercepto anterior : 2.323334
+ Pendiente anterior : 82.452705
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.314835
+ Pendiente actual : 82.462351
+ Derivada de interccepto :8.498738
+ Derivada de pendiente :-9.646326
+ 
+ Iteracion :79
+ Intercepto anterior : 2.314835
+ Pendiente anterior : 82.462351
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.306937
+ Pendiente actual : 82.471298
+ Derivada de interccepto :7.898335
+ Derivada de pendiente :-8.946471
+ 
+ Iteracion :80
+ Intercepto anterior : 2.306937
+ Pendiente anterior : 82.471298
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.299597
+ Pendiente actual : 82.479596
+ Derivada de interccepto :7.339872
+ Derivada de pendiente :-8.297809
+ 
+ Iteracion :81
+ Intercepto anterior : 2.299597
+ Pendiente anterior : 82.479596
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.292776
+ Pendiente actual : 82.487292
+ Derivada de interccepto :6.82048
+ Derivada de pendiente :-7.696546
+ 
+ Iteracion :82
+ Intercepto anterior : 2.292776
+ Pendiente anterior : 82.487292
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.286439
+ Pendiente actual : 82.494431
+ Derivada de interccepto :6.337478
+ Derivada de pendiente :-7.139173
+ 
+ Iteracion :83
+ Intercepto anterior : 2.286439
+ Pendiente anterior : 82.494431
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.28055
+ Pendiente actual : 82.501054
+ Derivada de interccepto :5.888361
+ Derivada de pendiente :-6.622447
+ 
+ Iteracion :84
+ Intercepto anterior : 2.28055
+ Pendiente anterior : 82.501054
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.27508
+ Pendiente actual : 82.507197
+ Derivada de interccepto :5.470793
+ Derivada de pendiente :-6.143369
+ 
+ Iteracion :85
+ Intercepto anterior : 2.27508
+ Pendiente anterior : 82.507197
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.269997
+ Pendiente actual : 82.512896
+ Derivada de interccepto :5.082592
+ Derivada de pendiente :-5.699165
+ 
+ Iteracion :86
+ Intercepto anterior : 2.269997
+ Pendiente anterior : 82.512896
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.265275
+ Pendiente actual : 82.518184
+ Derivada de interccepto :4.721722
+ Derivada de pendiente :-5.287271
+ 
+ Iteracion :87
+ Intercepto anterior : 2.265275
+ Pendiente anterior : 82.518184
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.260889
+ Pendiente actual : 82.523089
+ Derivada de interccepto :4.386288
+ Derivada de pendiente :-4.905312
+ 
+ Iteracion :88
+ Intercepto anterior : 2.260889
+ Pendiente anterior : 82.523089
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.256814
+ Pendiente actual : 82.52764
+ Derivada de interccepto :4.074519
+ Derivada de pendiente :-4.551094
+ 
+ Iteracion :89
+ Intercepto anterior : 2.256814
+ Pendiente anterior : 82.52764
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.25303
+ Pendiente actual : 82.531863
+ Derivada de interccepto :3.784766
+ Derivada de pendiente :-4.222582
+ 
+ Iteracion :90
+ Intercepto anterior : 2.25303
+ Pendiente anterior : 82.531863
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.249514
+ Pendiente actual : 82.535781
+ Derivada de interccepto :3.515492
+ Derivada de pendiente :-3.917896
+ 
+ Iteracion :91
+ Intercepto anterior : 2.249514
+ Pendiente anterior : 82.535781
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.246249
+ Pendiente actual : 82.539416
+ Derivada de interccepto :3.265267
+ Derivada de pendiente :-3.635294
+ 
+ Iteracion :92
+ Intercepto anterior : 2.246249
+ Pendiente anterior : 82.539416
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.243216
+ Pendiente actual : 82.542789
+ Derivada de interccepto :3.032755
+ Derivada de pendiente :-3.373163
+ 
+ Iteracion :93
+ Intercepto anterior : 2.243216
+ Pendiente anterior : 82.542789
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.240399
+ Pendiente actual : 82.545919
+ Derivada de interccepto :2.816715
+ Derivada de pendiente :-3.130009
+ 
+ Iteracion :94
+ Intercepto anterior : 2.240399
+ Pendiente anterior : 82.545919
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.237783
+ Pendiente actual : 82.548823
+ Derivada de interccepto :2.615991
+ Derivada de pendiente :-2.90445
+ 
+ Iteracion :95
+ Intercepto anterior : 2.237783
+ Pendiente anterior : 82.548823
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.235354
+ Pendiente actual : 82.551519
+ Derivada de interccepto :2.429506
+ Derivada de pendiente :-2.695204
+ 
+ Iteracion :96
+ Intercepto anterior : 2.235354
+ Pendiente anterior : 82.551519
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.233098
+ Pendiente actual : 82.55402
+ Derivada de interccepto :2.256258
+ Derivada de pendiente :-2.501083
+ 
+ Iteracion :97
+ Intercepto anterior : 2.233098
+ Pendiente anterior : 82.55402
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.231002
+ Pendiente actual : 82.556341
+ Derivada de interccepto :2.095314
+ Derivada de pendiente :-2.320989
+ 
+ Iteracion :98
+ Intercepto anterior : 2.231002
+ Pendiente anterior : 82.556341
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.229057
+ Pendiente actual : 82.558495
+ Derivada de interccepto :1.945807
+ Derivada de pendiente :-2.153903
+ 
+ Iteracion :99
+ Intercepto anterior : 2.229057
+ Pendiente anterior : 82.558495
+ Tasa de aprendizaje :0.1
+ Intercepto actual : 2.22725
+ Pendiente actual : 82.560494
+ Derivada de interccepto :1.80693
+ Derivada de pendiente :-1.998879
+
+
+ Ec. Optima :2.22725 + 82.560494x
